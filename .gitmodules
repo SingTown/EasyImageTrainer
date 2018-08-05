@@ -1,0 +1,3 @@
+[submodule "ImageDatasetFolder"]
+	path = ImageDatasetFolder
+	url = https://github.com/SingTown/ImageDatasetFolder.git
