@@ -24,7 +24,7 @@
   const appData = require('electron').remote.app.getPath('appData')
   const examplePath = path.join(appPath, 'ImageDatasetFolder')
   const starterPath = path.join(appPath, 'starter')
-  const projectPath = path.join(appData, 'ImageTrainer')
+  const projectPath = path.join(appData, 'EasyImageTrainer', 'project')
   export default {
     name: 'example-page',
     data () {
@@ -33,9 +33,7 @@
       }
     },
     mounted: function () {
-      if (!fs.pathExistsSync(projectPath)) {
-        fs.mkdirSync(projectPath, 0o777)
-      }
+      fs.ensureDirSync(projectPath)
       this.refreshExample()
     },
     methods: {

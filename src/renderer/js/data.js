@@ -21,11 +21,14 @@ class ImageData {
         let imgs = fs.readdirSync(path.join(projectPath, dirName))
         classUnit += 1
         imgs.forEach(function (imgName) {
-          imgList.push({
-            label: dirName,
-            img_path: path.join(projectPath, dirName, imgName),
-            index: parseInt(dirName.split('_')[0])
-          })
+          let stat = fs.statSync(path.join(projectPath, dirName, imgName))
+          if (stat && imgName[0] !== '.') { // ignore hidden files, such as .DS_Store
+            imgList.push({
+              label: dirName,
+              img_path: path.join(projectPath, dirName, imgName),
+              index: parseInt(dirName.split('_')[0])
+            })
+          }
         })
       }
     })

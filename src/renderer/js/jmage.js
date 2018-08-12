@@ -5,6 +5,7 @@ var fs = require('fs')
 const fileType = require('file-type')
 
 function decode (path) {
+  console.log(path)
   var img = fs.readFileSync(path)
   switch (fileType(img).mime) {
     case 'image/bmp':

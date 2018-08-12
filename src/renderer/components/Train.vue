@@ -24,7 +24,7 @@
   import {convertOpenMV} from '../js/nn_convert'
   const path = require('path')
   const appData = require('electron').remote.app.getPath('appData')
-  const projectPath = path.join(appData, 'ImageTrainer')
+  const projectPath = path.join(appData, 'EasyImageTrainer', 'project')
 
   export default {
     name: 'train-page',
